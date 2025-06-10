@@ -56,4 +56,4 @@ prediction = model.predict(user_input_scaled)[0]
 
 st.success(f"🔋 Predicted DC Power Output: {prediction:.2f} W")
 
-st.caption("Model: Random Forest Regressor | Trained on Plant 1 Data")
+st.caption("Model: Random Forest Regressor | Trained on Solar Power Generation Data")
