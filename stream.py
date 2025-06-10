@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib
+# import joblib
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import StandardScaler
 
@@ -50,7 +50,7 @@ hour = st.slider("Hour of Day", 0, 23, 12)
 day = st.slider("Day of Month", 1, 31, 15)
 
 # Prepare input and predict
-user_input = np.array([[ambient_temp, module_temp, irradiation, hour, day]])
+user_input = pd.DataFrame([[ambient_temp, module_temp, irradiation, hour, day]], columns=features)
 user_input_scaled = scaler.transform(user_input)
 prediction = model.predict(user_input_scaled)[0]
 
